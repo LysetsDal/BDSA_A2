@@ -3,9 +3,9 @@ public class Student
 {
     public int Id { get; init; }
 
-    public string GivenName { get; set; }
+    public string? GivenName { get; set; }
 
-    public string SurName { get; set; }
+    public string? SurName { get; set; }
 
     public enum Status
     {
