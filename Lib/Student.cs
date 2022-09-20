@@ -9,25 +9,24 @@ public class Student
 
     public string? SurName { get; set; }
 
-    public enum _Status
+    public enum State
     {
         New,
         Active,
         Dropout,
         Graduated
     }
-    public _Status Status
+    public State Status
     {
         get
         {
-
-            return _Status.Active;
-
+            var now = DateTime.Now;
+            if (now > StartDate && now < EndDate) return State.Active;
+            if (EndDate < GraduationDate) return State.Dropout;
+            if (EndDate >= GraduationDate && now >= GraduationDate) return State.Graduated;
+            return State.New;
         }
-
     }
-
-
 
     public DateTime StartDate { get; set; }
 
