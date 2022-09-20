@@ -7,4 +7,4 @@ var student = new Student(1, "Nicolai", "Friis");
 
 WriteLine(student.ToString());
 
-WriteLine(Student.Status.Active);
+WriteLine(Student.State.Active);
