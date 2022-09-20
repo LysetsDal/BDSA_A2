@@ -2,11 +2,6 @@ namespace Assignment2;
 
 public static class Extensions
 {
-
-
-
-
-
     public static IEnumerable<T> Flatten<T>(IEnumerable<IEnumerable<T>> items)
     {
         foreach (var item in items)
