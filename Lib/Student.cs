@@ -1,4 +1,6 @@
 ﻿namespace Lib;
+
+
 public class Student
 {
     public int Id { get; init; }
@@ -7,13 +9,25 @@ public class Student
 
     public string? SurName { get; set; }
 
-    public enum Status
+    public enum _Status
     {
         New,
         Active,
         Dropout,
         Graduated
     }
+    public _Status Status
+    {
+        get
+        {
+
+            return _Status.Active;
+
+        }
+
+    }
+
+
 
     public DateTime StartDate { get; set; }
 
