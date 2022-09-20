@@ -9,19 +9,18 @@ public class Student
 
     public string? SurName { get; set; }
 
-    public enum _Status
+    public enum State
     {
         New,
         Active,
         Dropout,
         Graduated
     }
-    public _Status Status
+    public State Status
     {
         get
         {
-
-            return _Status.Active;
+            return State.Active;
 
         }
 
