@@ -3,8 +3,11 @@
 //     Console.WriteLine(wizard);
 // }
 
-var student = new Student(1, "Nicolai", "Friis");
 
-WriteLine(student.ToString());
 
-WriteLine(Student.State.Active);
+var d = new Delegates();
+
+foreach (var item in d.CustomReverse("asger"))
+{
+    WriteLine(item);
+}
