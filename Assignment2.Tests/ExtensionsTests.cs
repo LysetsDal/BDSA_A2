@@ -6,25 +6,27 @@ public class ExtensionsTests
     [Fact]
     public void IsSecure_WhenGivenSecureWebpage()
     {
-       // Arrange
+        // Arrange
         Uri sut = new Uri("https://github.com/");
-        
-       // Act
+
+        // Act
         var result = sut.IsSecure();
 
-       // Assert
-       Assert.Equal(true, result);
+        // Assert
+        result.Should().Be(true);
     }
 
     [Fact]
-    public void WordCount_WhenGivenSentence() {
+    public void WordCount_WhenGivenSentence()
+    {
         // Arrange
         string sut = "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
-        
+
         // Act
         var result = sut.WordCount();
-        
+
         // Assert       
-        Assert.Equal(68, result);
+        result.Should().Be(68);
+
     }
 }
