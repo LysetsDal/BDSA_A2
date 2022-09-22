@@ -40,16 +40,21 @@ public static class Queries
 
     public static IEnumerable<Tuple<string, int?>> QueryWizardsHP(this WizardCollection wizards)
     {
+        var knownWizards = new HashSet<string>();
         foreach (var w in wizards)
         {
-            if (w.Medium.Contains("Harry Potter"))
+            if (w.Medium.Contains("Harry Potter") && !knownWizards.Contains(w.Name))
+            {
+                knownWizards.Add(w.Name);
                 yield return (new Tuple<string, int?>(w.Name, w.Year));
+            }
         }
     }
     
     public static IEnumerable<Tuple<string, int?>> QueryWizardsHPLINQ(this WizardCollection wizards)
     {
         return wizards.AsEnumerable().Where(w => w.Medium.Contains("Harry Potter"))
+            .DistinctBy(w => w.Name)
             .Select(w => (new Tuple<string, int?>(w.Name, w.Year)));
     }
     
